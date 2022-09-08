@@ -12,8 +12,8 @@
         <pubDate>Fri, 02 Sep 2022 16:42:16 +0800</pubDate>
         
         <guid>https://example.com/post/demo1/</guid>
-        <description>&lt;p&gt;​ &lt;br&gt;
-&lt;strong&gt;简要描述：&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;p&gt;​&lt;/p&gt;
+&lt;h2 id=&#34;简要描述&#34;&gt;&lt;strong&gt;简要描述：&lt;/strong&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;获取支付参数&lt;/li&gt;
 &lt;/ul&gt;
