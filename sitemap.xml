@@ -3,18 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://example.com/categories/</loc>
-    <lastmod>2022-09-08T10:20:36+08:00</lastmod>
+    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/post/demo2/</loc>
-    <lastmod>2022-09-08T10:20:36+08:00</lastmod>
+    <loc>https://example.com/tags/javascript/</loc>
+    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/javascript/</loc>
+    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/js%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/</loc>
+    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
   </url><url>
     <loc>https://example.com/</loc>
-    <lastmod>2022-09-08T10:20:36+08:00</lastmod>
+    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
   </url><url>
     <loc>https://example.com/post/</loc>
-    <lastmod>2022-09-08T10:20:36+08:00</lastmod>
+    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
   </url><url>
     <loc>https://example.com/tags/</loc>
+    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/demo2/</loc>
     <lastmod>2022-09-08T10:20:36+08:00</lastmod>
   </url><url>
     <loc>https://example.com/tags/test/</loc>
