@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='第一个demo'><title>Demo1</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='第一个demo'><title>npm安装nodemon命令</title>
 
-<link rel='canonical' href='https://example.com/post/demo1/'>
+<link rel='canonical' href='https://example.com/post/node/'>
 
-<link rel="stylesheet" href="/scss/style.min.5a8e892f6fa14515e9065eee1f5d2e05302606ec7f11750b2fb95198f9cdcbfd.css"><meta property='og:title' content='Demo1'>
+<link rel="stylesheet" href="/scss/style.min.5a8e892f6fa14515e9065eee1f5d2e05302606ec7f11750b2fb95198f9cdcbfd.css"><meta property='og:title' content='npm安装nodemon命令'>
 <meta property='og:description' content='第一个demo'>
-<meta property='og:url' content='https://example.com/post/demo1/'>
+<meta property='og:url' content='https://example.com/post/node/'>
 <meta property='og:site_name' content='Lys Site'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='test' /><meta property='article:published_time' content='2022-09-02T16:42:16&#43;08:00'/><meta property='article:modified_time' content='2022-09-02T16:42:16&#43;08:00'/>
-<meta name="twitter:title" content="Demo1">
+<meta name="twitter:title" content="npm安装nodemon命令">
 <meta name="twitter:description" content="第一个demo">
     <link rel="shortcut icon" href="favicon.ico" />
 
@@ -260,7 +260,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/post/demo1/">Demo1</a>
+            <a href="/post/node/">npm安装nodemon命令</a>
         </h2>
     
         
@@ -313,113 +313,45 @@
     
     
     <p>​</p>
-<h2 id="简要描述"><strong>简要描述：</strong></h2>
-<ul>
-<li>获取支付参数</li>
-</ul>
-<p><strong>请求URL：</strong></p>
-<ul>
-<li><code>https://api-ugo-web.itheima.net/api/public/v1/my/orders/req_unifiedorder</code></li>
-</ul>
-<p><strong>请求方式：</strong></p>
-<ul>
-<li>POST</li>
-</ul>
-<p><strong>请求头参数：</strong></p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>参数名</th>
-<th>必选</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Authorization</td>
-<td>是</td>
-<td>string</td>
-<td>用户登录成功获取的token值</td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>请求体参数：</strong></p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>参数名</th>
-<th>必选</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>order_number</td>
-<td>是</td>
-<td>string</td>
-<td>订单编号</td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>返回示例</strong></p>
+<h2 id="1-nodemon">1. nodemon</h2>
+<p>nodemon 是一种工具，可在检测到目录中的文件更改时通过自动重新启动节点应用程序来帮助开发基于 node.js 的应用程序。</p>
+<h4 id="安装">安装</h4>
+<h5 id="全局安装">全局安装</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;pay&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;timeStamp&#34;</span><span class="p">:</span> <span class="s2">&#34;1564730510&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;nonceStr&#34;</span><span class="p">:</span> <span class="s2">&#34;SReWbt3nEmpJo3tr&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;package&#34;</span><span class="p">:</span> <span class="s2">&#34;prepay_id=wx02152148991420a3b39a90811023326800&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;signType&#34;</span><span class="p">:</span> <span class="s2">&#34;MD5&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;paySign&#34;</span><span class="p">:</span> <span class="s2">&#34;3A6943C3B865FA2B2C825CDCB33C5304&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;order_number&#34;</span><span class="p">:</span> <span class="s2">&#34;HMDD20190802000000000422&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;meta&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;msg&#34;</span><span class="p">:</span> <span class="s2">&#34;预付订单生成成功&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="mi">200</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ npm i -g nodemon
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>返回参数说明</strong></p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th style="text-align:left">参数名</th>
-<th style="text-align:left">类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">pay</td>
-<td style="text-align:left">object</td>
-<td>该对象内的参数，为调用微信支付所必须</td>
-</tr>
-</tbody>
-</table></div>
-
+</div><h5 id="本地安装">本地安装</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ npm i -D nodemon
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意：本地安装需要在 package.json 文件的 script 脚本中指定要需要执行的命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">  &#34;script&#34;: {
+</span></span><span class="line"><span class="cl">    &#34;dev&#34;: &#34;nodemon app.js&#34;
+</span></span><span class="line"><span class="cl">  }
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -583,7 +515,15 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#简要描述"><strong>简要描述：</strong></a></li>
+    <li><a href="#1-nodemon">1. nodemon</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#安装">安装</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
