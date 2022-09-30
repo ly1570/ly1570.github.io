@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Tags on Lys Site</title>
-        <link>https://example.com/tags/</link>
-        <description>Recent content in Tags on Lys Site</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Fri, 30 Sep 2022 20:18:16 +0800</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>JavaScript</title>
-        <link>https://example.com/tags/javascript/</link>
-        <pubDate>Fri, 30 Sep 2022 20:18:16 +0800</pubDate>
-        
-        <guid>https://example.com/tags/javascript/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>test</title>
-        <link>https://example.com/tags/test/</link>
-        <pubDate>Thu, 08 Sep 2022 10:20:36 +0800</pubDate>
-        
-        <guid>https://example.com/tags/test/</guid>
-        <description></description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Tags on Lys Site</title>
+    <link>https://ohhios.top/tags/</link>
+    <description>Recent content in Tags on Lys Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 30 Sep 2022 21:10:11 +0800</lastBuildDate><atom:link href="https://ohhios.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>https://ohhios.top/tags/JavaScript/</link>
+      <pubDate>Fri, 30 Sep 2022 21:10:11 +0800</pubDate>
+      
+      <guid>https://ohhios.top/tags/JavaScript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>https://ohhios.top/tags/node/</link>
+      <pubDate>Fri, 30 Sep 2022 21:02:45 +0800</pubDate>
+      
+      <guid>https://ohhios.top/tags/node/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
 </rss>

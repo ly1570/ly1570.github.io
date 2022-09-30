@@ -1,0 +1,1 @@
+document.getElementById("back-top").classList.add('back-top');window.onscroll=function(){window.document.documentElement.scrollTop>500?document.getElementById("back-top").classList.add("show-btn"):document.getElementById("back-top").classList.remove("show-btn")};document.getElementById("back-top").onclick=function(){window.document.documentElement.scrollTop=0};

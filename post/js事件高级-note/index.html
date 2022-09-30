@@ -1,318 +1,160 @@
-<!DOCTYPE html>
-<html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='About JS'><title>JS事件高级-note</title>
+<!doctype html>
+<html lang="zh-CN">
+<head>
 
-<link rel='canonical' href='https://example.com/post/js%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/'>
-
-<link rel="stylesheet" href="/scss/style.min.5a8e892f6fa14515e9065eee1f5d2e05302606ec7f11750b2fb95198f9cdcbfd.css"><meta property='og:title' content='JS事件高级-note'>
-<meta property='og:description' content='About JS'>
-<meta property='og:url' content='https://example.com/post/js%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/'>
-<meta property='og:site_name' content='Lys Site'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='JavaScript' /><meta property='article:published_time' content='2022-09-30T20:18:16&#43;08:00'/><meta property='article:modified_time' content='2022-09-30T20:18:16&#43;08:00'/>
-<meta name="twitter:title" content="JS事件高级-note">
-<meta name="twitter:description" content="About JS">
-    <link rel="shortcut icon" href="favicon.ico" />
-
-    </head>
-    <body class="
-    article-page
-    ">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            if(!localStorage.getItem(colorSchemeKey)){
-                localStorage.setItem(colorSchemeKey, "auto");
-            }
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
-
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
-</script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header>
-        
-            
-            <figure class="site-avatar">
-                <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_hud212996f116feb17b12080217b55e93b_79821_300x0_resize_q75_box.jpg" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
-                </a>
-                
-                    <span class="emoji">👌</span>
-                
-            </figure>
-            
-        
-        
-        <div class="site-meta">
-            <h1 class="site-name"><a href="/">Lys Site</a></h1>
-            <h2 class="site-description">web真菜鸟.</h2>
-        </div>
-    </header><ol class="social-menu">
-            
-                <li>
-                    <a 
-                        href='https://github.com/ly1570'
-                        target="_blank"
-                        title="GitHub"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-</svg>
-
-
-
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a 
-                        href='https://space.bilibili.com/436707994'
-                        target="_blank"
-                        title="Bilibili"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-tv" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <rect x="3" y="7" width="18" height="13" rx="2" />
-  <polyline points="16 3 12 7 8 3" />
-</svg>
-                        
-                    </a>
-                </li>
-            
-        </ol><ol class="menu" id="main-menu">
-        
-        
-        
-
-        <li >
-            <a href='/' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="5 12 3 12 12 3 21 12 19 12" />
-  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-</svg>
-
-
-
-                
-                <span>主页</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/about' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-
-                
-                <span>关于</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/archives' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <rect x="3" y="4" width="18" height="4" rx="2" />
-  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
-  <line x1="10" y1="12" x2="14" y2="12" />
-</svg>
-
-
-
-                
-                <span>归档</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/search' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-                
-                <span>搜索</span>
-            </a>
-        </li>
-        
-        
-
-        <li >
-            <a href='/link' >
-                
-                
-                
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-</svg>
-
-
-
-                
-                <span>友情链接</span>
-            </a>
-        </li>
-        
-
-        <div class="menu-bottom-section">
-            
-            
-                <li id="dark-mode-toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                    <span>暗色模式</span>
-                </li>
-            
-        </div>
-    </ol>
-</aside>
-<main class="main full-width">
-    <article class="main-article">
-    <header class="article-header">
-
-    <div class="article-details">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <header class="article-category">
-        
-            <a href="/categories/javascript/" style="background-color: #2a9d8f; color: #fff;">
-                JavaScript
-            </a>
-        
-    </header>
+    <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/post/js%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/">JS事件高级-note</a>
-        </h2>
-    
+    <title>JS事件高级 Note | Lys Site</title>
+    <meta property="og:title" content="JS事件高级 Note - Lys Site">
+    <meta property="og:type" content="article">
         
-        <h3 class="article-subtitle">
-            About JS
-        </h3>
+    <meta property="article:published_time" content='2022-09-30T21:10:11&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-09-30T21:10:11&#43;08:00'>
+        
+    <meta name="Keywords" content="Vue,uni-app,linux,博客,编程学习,开端开发">
+    <meta name="description" content="JS事件高级 Note">
+        
+    <meta name="author" content="yu">
+    <meta property="og:url" content="https://ohhios.top/post/JS%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <h1>
+                        <a id="logo" href="https://ohhios.top">
+                            Lys Site
+                        </a>
+                    </h1>
+                    <div class="header-info">
+                        <div class="profile-area">
+  <a class="profile-avatar" href="/">
+    <img src="/img/avatar.jpg">
+  </a>
+  <span class="profile-author">yu</span>
+  <span class="profile-bio">web真菜鸟...</span>
+  
+    <div class="profile-social">
+        
+        <a rel="nofollow" target="_blank" href="https://github.com/ly1570"><img src="/img/social/github.svg" title="github"></a>
+        
+        <a rel="nofollow" target="_blank" href="https://space.bilibili.com/436707994"><img src="/img/social/bilibili.svg" title="哔哩哔哩"></a>
         
     </div>
-
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">Sep 30, 2022</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 5 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
     
 </div>
+                    </div>
+                
+                <span class="description" id="typed"></span>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://ohhios.top">首页</a>
+                    
+                    <a  href="https://ohhios.top/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://ohhios.top/categories/" title="分类">分类</a>
+                    
+                    <a  href="https://ohhios.top/tags/" title="标签">标签</a>
+                    
+                    <a  href="https://ohhios.top/search/" title="搜索">搜索</a>
+                    
+                    <a  href="https://ohhios.top/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
 </header>
+<script src="/js/typed.min.js"></script>
+<script>
+    new Typed("#typed",{
+        strings: ['嗨，欢迎访问我的个人博客','JavaScript','JavaScript'],
+        typeSpeed: 70,
+        backSpeed: 35,
+        startDelay: 1000,
+        backDelay: 1000,
+        loop: true,
+        loopCount: Infinity
+    })
+</script>
 
-    <section class="article-content">
-    
-    
-    <h1 id="1注册事件绑定事件">1.注册事件（绑定事件）</h1>
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <div class="toc-area">
+    <button class="toc-btn" onclick="switchMenu();"><img src="/img/menu.svg"/ title="文章目录"></button>
+    <div class="toc-slide">
+        <div class="toc-title">文章目录</div>
+        <nav id="TableOfContents">
+  <ol>
+    <li></li>
+  </ol>
+
+  <ol>
+    <li><a href="#211-传统注册方式">2.1.1 传统注册方式</a></li>
+    <li><a href="#212-方法监听注册事件">2.1.2 方法监听注册事件</a></li>
+  </ol>
+</nav>
+    </div>
+</div>
+<script src="/js/toc.js"></script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">JS事件高级 Note</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022-09-30
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/JavaScript'>JavaScript</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">| <span id="busuanzi_value_page_pv"></span><span>
+                    浏览</span></span>
+        </div>
+        
+        <div class="post-meta">
+            | <span>2455 字</span>
+        </div>
+        <div class="post-meta">
+            | <span>5 分钟</span>
+        </div>
+        <div class="post-content">
+            <p>注册事件、删除事件、DOM事件流、事件对象、阻止冒泡事件、事件委托</p>
+<h1 id="1注册事件绑定事件">1.注册事件（绑定事件）</h1>
 <h2 id="11-注册事件概述">1.1 注册事件概述</h2>
 <pre><code>	给元素添加事件，称为注册事件或者绑定事件。
 	注册事件有两种方式：传统方式和方法监听注册方式
@@ -320,17 +162,9 @@
 <h4 id="传统注册方式"><strong>传统注册方式</strong></h4>
 <pre><code>	利用 on 开头的事件 onclick 
 </code></pre>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onclick</span><span class="o">=</span><span class="err">“</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;hi~&#39;</span><span class="p">)</span><span class="err">”</span><span class="o">&gt;&lt;</span><span class="err">/button&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">btn</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>	特点： 注册事件的**唯一性**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ff79c6">&lt;</span>button onclick<span style="color:#ff79c6">=</span>“alert(<span style="color:#f1fa8c">&#39;hi~&#39;</span>)”<span style="color:#ff79c6">&gt;&lt;</span>/button&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>btn.onclick <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>() {} 
+</span></span></code></pre></div><pre><code>	特点： 注册事件的**唯一性**
 	同一个元素同一个事件只能设置一个处理函数，最后注册的处理函数将会覆盖前面注册的处理函数
 </code></pre>
 <h4 id="方法监听注册方式">方法监听注册方式</h4>
@@ -341,111 +175,51 @@
 	按注册顺序依次执行
 </code></pre>
 <h2 id="12-addeventlistener-事件监听方式">1.2 addEventListener 事件监听方式</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"> <span class="nx">eventTarget</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">[,</span> <span class="nx">useCapture</span><span class="p">])</span>  
-</span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>	eventTarget.addEventListener()方法将指定的监听器注册到 eventTarget（目标对象）上，当该对象触发指定的事件时，就会执行事件处理函数。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> eventTarget.addEventListener(type, listener[, useCapture])  
+</span></span></code></pre></div><pre><code>	eventTarget.addEventListener()方法将指定的监听器注册到 eventTarget（目标对象）上，当该对象触发指定的事件时，就会执行事件处理函数。
 </code></pre>
 <p>该方法接收三个参数：
 <strong>type</strong>：事件类型字符串，比如 click 、mouseover ，注意这里不要带 on
 <strong>listener</strong>：事件处理函数，事件发生时，会调用该监听函数
 <strong>useCapture</strong>：可选参数，是一个布尔值，默认是 false。学完 DOM 事件流后，我们再进一步学习</p>
 <h2 id="13-attachevent-事件监听方式">1.3 attachEvent 事件监听方式</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"> <span class="nx">eventTarget</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">(</span><span class="nx">eventNameWithOn</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>	eventTarget.attachEvent()方法将指定的监听器注册到 eventTarget（目标对象） 上，当该对象触发指定的事件时，指定的回调函数就会被执行。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> eventTarget.attachEvent(eventNameWithOn, callback) 
+</span></span></code></pre></div><pre><code>	eventTarget.attachEvent()方法将指定的监听器注册到 eventTarget（目标对象） 上，当该对象触发指定的事件时，指定的回调函数就会被执行。
 </code></pre>
 <p>该方法接收两个参数：
 eventNameWithOn：事件类型字符串，比如 onclick 、onmouseover ，这里要带 on
 callback： 事件处理函数，当目标触发事件时回调函数被调用
 <strong>注意：IE8 及早期版本支持</strong></p>
 <h2 id="14-注册事件兼容性解决方案">1.4 注册事件兼容性解决方案</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">eventName</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 判断当前浏览器是否支持 addEventListener 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    	<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">eventName</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>  <span class="c1">// 第三个参数 默认是false
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      	<span class="nx">element</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">(</span><span class="s1">&#39;on&#39;</span> <span class="o">+</span> <span class="nx">eventName</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">       	<span class="c1">// 相当于 element.onclick = fn;
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>       	<span class="nx">element</span><span class="p">[</span><span class="s1">&#39;on&#39;</span> <span class="o">+</span> <span class="nx">eventName</span><span class="p">]</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>兼容性处理的原则： 首先照顾大多数浏览器，再处理特殊浏览器</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8be9fd;font-style:italic">function</span> addEventListener(element, eventName, fn) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#6272a4">// 判断当前浏览器是否支持 addEventListener 方法
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">if</span> (element.addEventListener) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    	element.addEventListener(eventName, fn);  <span style="color:#6272a4">// 第三个参数 默认是false
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#6272a4"></span>    } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (element.attachEvent) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>      	element.attachEvent(<span style="color:#f1fa8c">&#39;on&#39;</span> <span style="color:#ff79c6">+</span> eventName, fn);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>     } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>       	<span style="color:#6272a4">// 相当于 element.onclick = fn;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#6272a4"></span>       	element[<span style="color:#f1fa8c">&#39;on&#39;</span> <span style="color:#ff79c6">+</span> eventName] <span style="color:#ff79c6">=</span> fn;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>} 
+</span></span></code></pre></div><p><strong>兼容性处理的原则： 首先照顾大多数浏览器，再处理特殊浏览器</strong></p>
 <h1 id="2删除事件解绑时间">2.删除事件（解绑时间）</h1>
 <h2 id="21-删除事件的方式">2.1 删除事件的方式</h2>
 <h3 id="211-传统注册方式">2.1.1 传统注册方式</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">eventTarget</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="212-方法监听注册事件">2.1.2 方法监听注册事件</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">eventTarget</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">listener</span><span class="p">[,</span> <span class="nx">useCapture</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">eventTarget</span><span class="p">.</span><span class="nx">detachEvent</span><span class="p">(</span><span class="nx">eventNameWithOn</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="22-删除事件兼容性解决方案">2.2 删除事件兼容性解决方案</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"> <span class="kd">function</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span> <span class="nx">eventName</span><span class="p">,</span> <span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="c1">// 判断当前浏览器是否支持 removeEventListener 方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">element</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">eventName</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>  <span class="c1">// 第三个参数 默认是false
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">.</span><span class="nx">detachEvent</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">element</span><span class="p">.</span><span class="nx">detachEvent</span><span class="p">(</span><span class="s1">&#39;on&#39;</span> <span class="o">+</span> <span class="nx">eventName</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">element</span><span class="p">[</span><span class="s1">&#39;on&#39;</span> <span class="o">+</span> <span class="nx">eventName</span><span class="p">]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"> <span class="p">}</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="3-dom事件流">3. DOM事件流</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>eventTarget.onclick <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span>;
+</span></span></code></pre></div><h3 id="212-方法监听注册事件">2.1.2 方法监听注册事件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>eventTarget.removeEventListener(type, listener[, useCapture]);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>eventTarget.detachEvent(eventNameWithOn, callback);
+</span></span></code></pre></div><h2 id="22-删除事件兼容性解决方案">2.2 删除事件兼容性解决方案</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> <span style="color:#8be9fd;font-style:italic">function</span> removeEventListener(element, eventName, fn) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>      <span style="color:#6272a4">// 判断当前浏览器是否支持 removeEventListener 方法
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4"></span>      <span style="color:#ff79c6">if</span> (element.removeEventListener) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        element.removeEventListener(eventName, fn);  <span style="color:#6272a4">// 第三个参数 默认是false
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#6272a4"></span>      } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (element.detachEvent) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>        element.detachEvent(<span style="color:#f1fa8c">&#39;on&#39;</span> <span style="color:#ff79c6">+</span> eventName, fn);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>      } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>        element[<span style="color:#f1fa8c">&#39;on&#39;</span> <span style="color:#ff79c6">+</span> eventName] <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">null</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span> } 
+</span></span></code></pre></div><h1 id="3-dom事件流">3. DOM事件流</h1>
 <pre><code>	事件流描述的是从页面中接收事件的顺序。
 	事件发生时会在元素节点之间按照特定的顺序传播，这个传播过程即 DOM 事件流。
 </code></pre>
@@ -456,16 +230,9 @@ callback： 事件处理函数，当目标触发事件时回调函数被调用
 <li>当前目标阶段</li>
 <li>冒泡阶段</li>
 </ol>
-<p><img src="/E:%5cly%5clys%5ccontent%5cpost%5cJS%e4%ba%8b%e4%bb%b6%e9%ab%98%e7%ba%a7-note%5cjsnote%5cimage-20220530221043428.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20220530221043428"
-	
-	
-></p>
+<p>
+        <img class="mx-auto" alt="" src="/asset/DOM%e4%ba%8b%e4%bb%b6%e6%b5%81.png" />   
+    </p>
 <pre><code>	**事件冒泡：** IE 最早提出，事件开始时由最具体的元素接收，然后逐级向上传播到到 DOM 最顶层节点的过程。
 	**事件捕获：** 网景最早提出，由 DOM 最顶层节点开始，然后逐级向下传播到到最具体的元素接收的过程。 
 
@@ -473,16 +240,9 @@ callback： 事件处理函数，当目标触发事件时回调函数被调用
 
 	我们向水里面扔一块石头，首先它会有一个下降的过程，这个过程就可以理解为从最顶层向事件发生的最具体元素（目标点）的捕获过程；之后会产生泡泡，会在最低点（ 最具体元素）之后漂浮到水面上，这个过程相当于事件冒泡。
 </code></pre>
-<p><img src="/E:%5cly%5clys%5ccontent%5cpost%5cJS%e4%ba%8b%e4%bb%b6%e9%ab%98%e7%ba%a7-note%5cjsnote%5cimage-20220530221206902.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20220530221206902"
-	
-	
-></p>
+<p>
+        <img class="mx-auto" alt="" src="/asset/%e4%ba%8b%e4%bb%b6%e6%8d%95%e8%8e%b7%e4%b8%8e%e5%86%92%e6%b3%a1.png" />   
+    </p>
 <pre><code>	事件发生时会在元素节点之间按照特定的顺序传播，这个传播过程即 DOM 事件流。
 </code></pre>
 <p><strong>注意</strong>
@@ -494,19 +254,10 @@ callback： 事件处理函数，当目标触发事件时回调函数被调用
 6、事件冒泡有时候会带来麻烦，有时候又会帮助很巧妙的做某些事件，我们后面讲解。</p>
 <h1 id="4事件对象">4.事件对象</h1>
 <h2 id="41-什么是事件对象">4.1 什么是事件对象</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">  <span class="nx">eventTarget</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{}</span> 
-</span></span><span class="line"><span class="cl">  <span class="nx">eventTarget</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{}</span><span class="err">）</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// 这个 event 就是事件对象，我们还喜欢的写成 e 或者 evt 
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>	官方解释：event 对象代表事件的状态，比如键盘按键的状态、鼠标的位置、鼠标按钮的状态。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>  eventTarget.onclick <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>(event) {} 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  eventTarget.addEventListener(<span style="color:#f1fa8c">&#39;click&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span>(event) {}）
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#6272a4">// 这个 event 就是事件对象，我们还喜欢的写成 e 或者 evt 
+</span></span></span></code></pre></div><pre><code>	官方解释：event 对象代表事件的状态，比如键盘按键的状态、鼠标的位置、鼠标按钮的状态。
 	简单理解：事件发生后，跟事件相关的一系列信息数据的集合都放到这个对象里面，这个对象就是事件对象 event，它有很多属性和方法。
 </code></pre>
 <p>比如：</p>
@@ -516,25 +267,13 @@ callback： 事件处理函数，当目标触发事件时回调函数被调用
 <li>键盘触发事件的话，会得到键盘的相关信息，如按了哪个键。</li>
 </ol>
 <h2 id="42-事件对象的使用语法">4.2 事件对象的使用语法</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">  <span class="nx">eventTarget</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">     <span class="c1">// 这个 event 就是事件对象，我们还喜欢的写成 e 或者 evt 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span> 
-</span></span><span class="line"><span class="cl">  <span class="nx">eventTarget</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 这个 event 就是事件对象，我们还喜欢的写成 e 或者 evt 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">}</span><span class="err">）</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><pre><code>	这个 event  是个形参，系统帮我们设定为事件对象，不需要传递实参过去。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>  eventTarget.onclick <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">function</span>(event) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>     <span style="color:#6272a4">// 这个 event 就是事件对象，我们还喜欢的写成 e 或者 evt 
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4"></span>  } 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  eventTarget.addEventListener(<span style="color:#f1fa8c">&#39;click&#39;</span>, <span style="color:#8be9fd;font-style:italic">function</span>(event) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    <span style="color:#6272a4">// 这个 event 就是事件对象，我们还喜欢的写成 e 或者 evt 
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#6272a4"></span>  }）
+</span></span></code></pre></div><pre><code>	这个 event  是个形参，系统帮我们设定为事件对象，不需要传递实参过去。
 </code></pre>
 <p>当我们注册事件时， event 对象就会被系统自动创建，并依次传递给事件监听器（事件处理函数）。</p>
 <h2 id="43-事件对象的兼容性方案">4.3 事件对象的兼容性方案</h2>
@@ -547,23 +286,16 @@ callback： 事件处理函数，当目标触发事件时回调函数被调用
 <p>在 IE6~8 中，浏览器不会给方法传递参数，如果需要的话，需要到 window.event 中获取查找。</p>
 </li>
 </ol>
-<p><strong>解决:</strong> 
+<p><strong>解决:</strong>
 <strong>e = e || window.event;</strong></p>
 <h2 id="44-事件对象的常见属性和方法">4.4 事件对象的常见属性和方法</h2>
 <p>e.target 和 this 的区别：</p>
 <pre><code>	this 是事件绑定的元素， 这个函数的调用者（绑定这个事件的元素） 
 	e.target 是事件触发的元素。
 </code></pre>
-<p>!<img src="/E:%5cly%5clys%5ccontent%5cpost%5cJS%e4%ba%8b%e4%bb%b6%e9%ab%98%e7%ba%a7-note%5cjsnote%5cimage-20220530221947665.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20220530221947665"
-	
-	
-></p>
+<p>
+        <img class="mx-auto" alt="" src="/asset/%e4%ba%8b%e4%bb%b6%e5%af%b9%e8%b1%a1%e5%b1%9e%e6%80%a7%e6%96%b9%e6%b3%95.png" />   
+    </p>
 <h1 id="5-阻止事件冒泡">5. 阻止事件冒泡</h1>
 <h2 id="51-阻止事件冒泡的两种方式">5.1 阻止事件冒泡的两种方式</h2>
 <pre><code>	事件冒泡：开始时由最具体的元素接收，然后逐级向上传播到到 DOM 最顶层节点。
@@ -571,41 +303,16 @@ callback： 事件处理函数，当目标触发事件时回调函数被调用
 </code></pre>
 <p><strong>阻止事件冒泡</strong></p>
 <p>标准写法：利用事件对象里面的 stopPropagation()方法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"> <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">()</span> 
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>非标准写法：IE 6-8  利用事件对象 cancelBubble 属性</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"> <span class="nx">e</span><span class="p">.</span><span class="nx">cancelBubble</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="52-阻止事件冒泡的兼容性解决方案">5.2 阻止事件冒泡的兼容性解决方案</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">  <span class="k">if</span><span class="p">(</span><span class="nx">e</span> <span class="o">&amp;&amp;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">.</span><span class="nx">cancelBubble</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="6-事件委托代理委派">6. 事件委托（代理、委派）</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> e.stopPropagation() 
+</span></span></code></pre></div><p>非标准写法：IE 6-8  利用事件对象 cancelBubble 属性</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span> e.cancelBubble <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span>;
+</span></span></code></pre></div><h2 id="52-阻止事件冒泡的兼容性解决方案">5.2 阻止事件冒泡的兼容性解决方案</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>  <span style="color:#ff79c6">if</span>(e <span style="color:#ff79c6">&amp;&amp;</span> e.stopPropagation){
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>      e.stopPropagation();
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  }<span style="color:#ff79c6">else</span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>      <span style="color:#8be9fd;font-style:italic">window</span>.event.cancelBubble <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">true</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  }
+</span></span></code></pre></div><h1 id="6-事件委托代理委派">6. 事件委托（代理、委派）</h1>
 <p><strong>事件委托</strong>
 事件委托也称为事件代理， 在 jQuery 里面称为事件委派。</p>
 <p><strong>事件委托的原理</strong>
@@ -613,210 +320,176 @@ callback： 事件处理函数，当目标触发事件时回调函数被调用
 以上案例：给 ul 注册点击事件，然后利用事件对象的 target 来找到当前点击的 li，因为点击 li，事件会冒泡到 ul 上， ul 有注册事件，就会触发事件监听器。</p>
 <p><strong>事件委托的作用</strong>
 我们只操作了一次 DOM ，提高了程序的性能。</p>
+        </div>
 
-</section>
-
-
-    <footer class="article-footer">
-    
-    <section class="article-tags">
         
-            <a href="/tags/javascript/">JavaScript</a>
+<div class="post-archive">
+    <span><strong>转载请注明出处（作者，链接）</strong>👇👇👇</span>
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://ohhios.top">yu</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://ohhios.top/post/JS%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/">https://ohhios.top/post/JS%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/</a></li>
+    </ul>
+</div>
+<br/>
+
+
+
         
-    </section>
 
-
-    </footer>
-
-
-    
-</article>
-
-    
-
-    
-
-     
-    
+<div class="post-archive">
+    <h2>其他文章</h2>
+    <ul class="listing">
         
+        <li><a href="/post/node/">npm安装nodemon命令</a></li>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/JavaScript'>JavaScript</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
-    <footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        2022 ~ Lys Site
-    </section>
     
-    <section class="powerby">
-        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.13.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
-    </section>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        <br/>
+        &copy; 2022 <a rel="nofollow" target="_blank" href="https://ohhios.top">Lys Site</a>
+    </div>
+    <div style="margin-top: 10px;">
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-red">Maupassant</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/cseric" target="_black"><span class="badge-subject">Modified by</span><span class="badge-value bg-brightgreen">cseric</span></a>
+        </div>
+    </div>
+    
+    <div style="margin-top: 10px; font-size: 14px;">
+        <span>-</span>
+        <span id="busuanzi_container_site_pv">
+            本站总访问量 <span id="busuanzi_value_site_pv" style="color: #1E90FF;"></span> 次
+        </span>
+        <span>|</span>
+        <span id="busuanzi_container_site_uv">
+          本站访客数 <span id="busuanzi_value_site_uv" style="color: #1E90FF;"></span> 人次
+        </span>
+        <span>-</span>
+    </div>
+    
+    
+    <div style="margin-top: 10px; font-size: 14px;">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img src="/img/creative-commons-zero-line.svg" style="vertical-align: sub;"> BY-NC 4.0</a>
+    </div>
 </footer>
 
 
     
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-    
-    <div class="pswp__bg"></div>
 
-    
-    <div class="pswp__scroll-wrap">
+<a id="back-top"><img src="/img/top.svg" title="回到顶部"></a>
+<script type="text/javascript" src='/js/totop.js'></script><script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
                 </div>
-            </div>
 
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
+                <div id="secondary">
 
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
+    <section class="widget">
+        <div class="profile-area">
+  <a class="profile-avatar" href="/">
+    <img src="/img/avatar.jpg">
+  </a>
+  <span class="profile-author">yu</span>
+  <span class="profile-bio">web真菜鸟...</span>
+  
+    <div class="profile-social">
+        
+        <a rel="nofollow" target="_blank" href="https://github.com/ly1570"><img src="/img/social/github.svg" title="github"></a>
+        
+        <a rel="nofollow" target="_blank" href="https://space.bilibili.com/436707994"><img src="/img/social/bilibili.svg" title="哔哩哔哩"></a>
+        
     </div>
-
-</div><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
-            >
-
-            </main>
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#11-注册事件概述">1.1 注册事件概述</a>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#传统注册方式"><strong>传统注册方式</strong></a></li>
-            <li><a href="#方法监听注册方式">方法监听注册方式</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#12-addeventlistener-事件监听方式">1.2 addEventListener 事件监听方式</a></li>
-    <li><a href="#13-attachevent-事件监听方式">1.3 attachEvent 事件监听方式</a></li>
-    <li><a href="#14-注册事件兼容性解决方案">1.4 注册事件兼容性解决方案</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#21-删除事件的方式">2.1 删除事件的方式</a>
-      <ol>
-        <li><a href="#211-传统注册方式">2.1.1 传统注册方式</a></li>
-        <li><a href="#212-方法监听注册事件">2.1.2 方法监听注册事件</a></li>
-      </ol>
-    </li>
-    <li><a href="#22-删除事件兼容性解决方案">2.2 删除事件兼容性解决方案</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#41-什么是事件对象">4.1 什么是事件对象</a></li>
-    <li><a href="#42-事件对象的使用语法">4.2 事件对象的使用语法</a></li>
-    <li><a href="#43-事件对象的兼容性方案">4.3 事件对象的兼容性方案</a></li>
-    <li><a href="#44-事件对象的常见属性和方法">4.4 事件对象的常见属性和方法</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#51-阻止事件冒泡的两种方式">5.1 阻止事件冒泡的两种方式</a></li>
-    <li><a href="#52-阻止事件冒泡的兼容性解决方案">5.2 阻止事件冒泡的兼容性解决方案</a></li>
-  </ol>
-</nav>
-        </div>
+    
+</div>
     </section>
 
-            
-        
-    </aside>
+    
+  
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li class="recent-post-item">
+        <a href="https://ohhios.top/post/JS%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/" title="JS事件高级 Note">JS事件高级 Note</a>
+    </li>
+    
+    <li class="recent-post-item">
+        <a href="https://ohhios.top/post/node/" title="npm安装nodemon命令">npm安装nodemon命令</a>
+    </li>
+    
+</ul>
+    </section>
 
+    
 
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li class="categories-item"><a href="https://ohhios.top/categories/JavaScript/">JavaScript (1)</a></li>
+    
+    <li class="categories-item"><a href="https://ohhios.top/categories/Node/">Node (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://ohhios.top/tags/JavaScript/">JavaScript</a>
+    
+    <a href="https://ohhios.top/tags/node/">node</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://ohhios.top/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
         </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+    </div>
+</body>
 
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
-</script>
-
-    </body>
 </html>

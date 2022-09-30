@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>node on Lys Site</title>
+    <link>https://ohhios.top/tags/node/</link>
+    <description>Recent content in node on Lys Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 30 Sep 2022 21:02:45 +0800</lastBuildDate><atom:link href="https://ohhios.top/tags/node/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>npm安装nodemon命令</title>
+      <link>https://ohhios.top/post/node/</link>
+      <pubDate>Fri, 30 Sep 2022 21:02:45 +0800</pubDate>
+      
+      <guid>https://ohhios.top/post/node/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

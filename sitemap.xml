@@ -2,49 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/categories/</loc>
-    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+    <loc>https://ohhios.top/categories/</loc>
+    <lastmod>2022-09-30T21:10:11+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/javascript/</loc>
-    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+    <loc>https://ohhios.top/tags/JavaScript/</loc>
+    <lastmod>2022-09-30T21:10:11+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/javascript/</loc>
-    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+    <loc>https://ohhios.top/categories/JavaScript/</loc>
+    <lastmod>2022-09-30T21:10:11+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/post/js%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/</loc>
-    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+    <loc>https://ohhios.top/post/JS%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7-note/</loc>
+    <lastmod>2022-09-30T21:10:11+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/</loc>
-    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+    <loc>https://ohhios.top/</loc>
+    <lastmod>2022-09-30T21:10:11+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/post/</loc>
-    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+    <loc>https://ohhios.top/post/</loc>
+    <lastmod>2022-09-30T21:10:11+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/</loc>
-    <lastmod>2022-09-30T20:18:16+08:00</lastmod>
+    <loc>https://ohhios.top/tags/</loc>
+    <lastmod>2022-09-30T21:10:11+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/post/demo2/</loc>
-    <lastmod>2022-09-08T10:20:36+08:00</lastmod>
+    <loc>https://ohhios.top/tags/node/</loc>
+    <lastmod>2022-09-30T21:02:45+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/test/</loc>
-    <lastmod>2022-09-08T10:20:36+08:00</lastmod>
+    <loc>https://ohhios.top/categories/Node/</loc>
+    <lastmod>2022-09-30T21:02:45+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/test/</loc>
-    <lastmod>2022-09-08T10:20:36+08:00</lastmod>
+    <loc>https://ohhios.top/post/node/</loc>
+    <lastmod>2022-09-30T21:02:45+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/post/node/</loc>
-    <lastmod>2022-09-02T16:42:16+08:00</lastmod>
+    <loc>https://ohhios.top/about/</loc>
+    <lastmod>2022-09-30T21:00:37+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/page/</loc>
-    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
+    <loc>https://ohhios.top/archives/</loc>
   </url><url>
-    <loc>https://example.com/about/</loc>
-    <lastmod>2022-09-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://example.com/archives/</loc>
-  </url><url>
-    <loc>https://example.com/link/</loc>
-  </url><url>
-    <loc>https://example.com/search/</loc>
+    <loc>https://ohhios.top/search/</loc>
   </url>
 </urlset>
